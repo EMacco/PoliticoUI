@@ -36,7 +36,11 @@ class Login extends Component {
           : (errors.email = isEmail(value) ? '' : 'Invalid Email Address');
         break;
       case 'password':
-        errors.password = isEmpty(value) ? 'Password is required' : '';
+        errors.password = isEmpty(value)
+          ? 'Password is required'
+          : (errors.password = isLength(value, { min: 8, max: 15 })
+              ? ''
+              : 'Password should be between 8 and 15 characters');
         break;
       default:
         break;

@@ -958,7 +958,9 @@ label {
   display: block;
   color: red;
   font-size: 0.8em;
-  margin-left: 50px;
+  margin: 0 auto;
+  width: 80%;
+  padding-left: 17px;
 }
 
 input {
