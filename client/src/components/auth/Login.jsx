@@ -14,7 +14,7 @@ class Login extends Component {
     email: '',
     password: '',
     errors: {},
-    formValid: false,
+    formValid: true,
     isLoading: false
   };
 
@@ -28,7 +28,6 @@ class Login extends Component {
   onChange = e => {
     const { errors } = this.state;
     const { name, value } = e.target;
-    // this.validateLogin();
     switch (name) {
       case 'email':
         errors.email = isEmpty(value)
@@ -49,6 +48,24 @@ class Login extends Component {
     this.setState({ errors, [name]: value });
   };
 
+  validateLoginDetails = () => {
+    const errors = {};
+    const { email, password } = this.state;
+    errors.email = isEmpty(email)
+      ? 'Email is required'
+      : (errors.email = isEmail(email) ? '' : 'Invalid Email Address');
+
+    errors.password = isEmpty(password)
+      ? 'Password is required'
+      : (errors.password = isLength(password, { min: 8, max: 15 })
+          ? ''
+          : 'Password should be between 8 and 15 characters');
+
+    this.setState({ ...this.state, errors });
+
+    return this.isValid(errors);
+  };
+
   isValid = errors => {
     let valid = true;
 
@@ -65,11 +82,15 @@ class Login extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    this.setState({ ...this.state, isLoading: true });
+    const valid = this.validateLoginDetails();
 
-    const { email, password } = this.state;
-    const userData = { email, password };
-    this.props.loginUser(userData, this.props.history);
+    if (valid) {
+      this.setState({ ...this.state, isLoading: true });
+
+      const { email, password } = this.state;
+      const userData = { email, password };
+      this.props.loginUser(userData, this.props.history);
+    }
   };
 
   render() {
@@ -136,7 +157,7 @@ class Login extends Component {
                   </button>
 
                   <div className="create-account-div">
-                    <Link to="signup.html">Create your Account</Link>
+                    <Link to="/register">Create your Account</Link>
                     <img src="img/arror-icon.png" />
                   </div>
                 </form>
