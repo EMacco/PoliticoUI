@@ -11,6 +11,37 @@ export const setCurrentUser = user => {
   };
 };
 
+// Register user
+export const registerUser = (userData, history) => dispatch => {
+  axios
+    .post('https://politico-okwara.herokuapp.com/api/v1/auth/signup', userData)
+    .then(res => {
+      const response = res.data.data[0];
+
+      // Set token in local storage
+      const { token } = response;
+      localStorage.setItem('jwtToken', token);
+
+      // Set token to auth header
+      setAuthToken(token);
+
+      // Decode to get user data
+      const { user } = response;
+
+      // Set current user
+      dispatch(setCurrentUser(user));
+
+      // history.push('/userhome');
+      toast.success('Registration Successful');
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: { global: err.response.data.error }
+      })
+    );
+};
+
 export const loginUser = (userData, history) => dispatch => {
   axios
     .post('https://politico-okwara.herokuapp.com/api/v1/auth/login', userData)
