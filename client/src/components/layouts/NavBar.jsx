@@ -23,7 +23,7 @@ const NavBar = () => {
         </ul>
       </nav>
 
-      <label forhtml="nav-toggle" className="nav-toggle-label">
+      <label htmlFor="nav-toggle" className="nav-toggle-label">
         <span />
       </label>
     </header>
