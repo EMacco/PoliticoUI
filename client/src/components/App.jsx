@@ -12,6 +12,7 @@ import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import { setCurrentUser, logoutUser } from '../actions/authActions';
 import Dashboard from '@components/dashboard/UserHome';
+import Parties from '@components/dashboard/Parties';
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -49,6 +50,9 @@ const App = () => {
           </Route>
           <Route exact path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route exact path="/parties">
+            <Parties />
           </Route>
         </Switch>
       </Router>

@@ -173,7 +173,6 @@ const fetchPageVotes = ({ id }) => dispatch => {
                 };
                 votes.push(votesObject);
                 if (ind === dataa.length - 1) {
-                  // Dispatch to the reduc store
                   dispatch({ type: SET_USER_VOTES, payload: votes });
                 }
               });

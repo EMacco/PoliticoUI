@@ -27,6 +27,7 @@ class AuthNav extends Component {
 
   render() {
     const { firstname, lastname, email, phonenumber, passporturl, isadmin } = this.props.auth.user;
+    const { current } = this.props;
 
     const { uploadingMessage, src } = this.state;
     const profileImage = passporturl === 'undefined' ? personIcon : src === '' ? passporturl : src;
@@ -71,26 +72,34 @@ class AuthNav extends Component {
 
         <hr className="separate-profile-nav" />
 
-        <Link to="/dashboard" id="current-side-bar">
-          <div className="nav-menu" id="current-side-bar">
+        <Link to="/dashboard" id={current === 'profile' ? 'current-side-bar' : null}>
+          <div className="nav-menu" id={current === 'profile' ? 'current-side-bar' : null}>
             My Profile
           </div>
         </Link>
         {isadmin ? (
-          <Link to="/admin-dashboard" id="hideDashboardDiv">
-            <div className="nav-menu">My Dashboard</div>
+          <Link to="/admin-dashboard" id={current === 'dashboard' ? 'current-side-bar' : null}>
+            <div className="nav-menu" id={current === 'dashboard' ? 'current-side-bar' : null}>
+              My Dashboard
+            </div>
           </Link>
         ) : (
           ''
         )}
-        <Link to="/parties">
-          <div className="nav-menu">Political Parties</div>
+        <Link to="/parties" id={current === 'parties' ? 'current-side-bar' : null}>
+          <div className="nav-menu" id={current === 'parties' ? 'current-side-bar' : null}>
+            Political Parties
+          </div>
         </Link>
-        <Link to="/offices">
-          <div className="nav-menu">Government Offices</div>
+        <Link to="/offices" id={current === 'offices' ? 'current-side-bar' : null}>
+          <div className="nav-menu" id={current === 'offices' ? 'current-side-bar' : null}>
+            Government Offices
+          </div>
         </Link>
-        <Link to="/elections">
-          <div className="nav-menu">Vote</div>
+        <Link to="/elections" id={current === 'elections' ? 'current-side-bar' : null}>
+          <div className="nav-menu" id={current === 'elections' ? 'current-side-bar' : null}>
+            Vote
+          </div>
         </Link>
         <Link to="/dashboard" onClick={this.signoutBtnClicked}>
           <div className="nav-menu">Log out</div>

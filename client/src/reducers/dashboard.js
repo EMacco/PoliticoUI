@@ -1,4 +1,9 @@
-import { SET_INTERESTED_OFFICE, SET_USER_VOTES, CLEAR_DASHBOARD, GET_ERRORS } from '../actions/types';
+import {
+  SET_INTERESTED_OFFICE,
+  SET_USER_VOTES,
+  CLEAR_DASHBOARD,
+  GET_ERRORS
+} from '../actions/types';
 
 const initialState = {
   interests: {},
@@ -12,7 +17,7 @@ const dashboardReducer = (state = initialState, action) => {
     case SET_USER_VOTES:
       return { ...state, votes: action.payload };
     case CLEAR_DASHBOARD:
-        return { ...state, interests: {}, votes: [] };
+      return { ...state, interests: {}, votes: [] };
     default:
       return state;
   }
