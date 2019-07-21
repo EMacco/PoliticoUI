@@ -980,3 +980,7 @@ input {
 .signin-submit-btn:disabled {
   cursor: not-allowed !important;
 }
+
+span {
+  display: block;
+}

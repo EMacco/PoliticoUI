@@ -4,7 +4,9 @@ import {
   GET_ERRORS,
   SET_CURRENT_USER,
   CLEAR_CURRENT_PROFILE,
-  CLEAR_DASHBOARD
+  CLEAR_DASHBOARD,
+  CLEAR_PARTIES,
+  CLEAR_OFFICES
 } from '../actions/types';
 
 // Set logged in user
@@ -74,6 +76,8 @@ export const logoutUser = history => dispatch => {
   dispatch(setCurrentUser({}));
   dispatch({ type: CLEAR_CURRENT_PROFILE });
   dispatch({ type: CLEAR_DASHBOARD });
+  dispatch({ type: CLEAR_PARTIES });
+  dispatch({ type: CLEAR_OFFICES });
   if (history) history.push('/');
   else window.location.href = '/';
 };

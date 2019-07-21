@@ -46,6 +46,9 @@ const Card = ({ name, image, content, hidden }) => {
           </span>
         );
         break;
+      case 'empty':
+        design = '';
+        break;
       default:
         design = <CardText title={title} value={value} key={Math.random().toString()} />;
     }

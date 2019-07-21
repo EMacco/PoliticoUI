@@ -9,11 +9,8 @@ import { fetchPoliticalParties, changeUserParty } from '@actions/party';
 
 class Parties extends Component {
   componentDidMount() {
-    const {
-      fetchPoliticalParties,
-      user: { partyid }
-    } = this.props;
-    fetchPoliticalParties(partyid);
+    const { fetchPoliticalParties } = this.props;
+    fetchPoliticalParties();
   }
 
   joinParty = e => {
