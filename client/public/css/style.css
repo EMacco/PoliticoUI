@@ -981,7 +981,7 @@ input {
   cursor: not-allowed !important;
 }
 
-span,
-button {
+button,
+.casted-vote {
   display: block;
 }
