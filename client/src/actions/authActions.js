@@ -1,7 +1,11 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import setAuthToken from '../utils/setAuthToken';
-import { GET_ERRORS, SET_CURRENT_USER, CLEAR_CURRENT_PROFILE } from '../actions/types';
+import {
+  GET_ERRORS,
+  SET_CURRENT_USER,
+  CLEAR_CURRENT_PROFILE,
+  CLEAR_DASHBOARD
+} from '../actions/types';
 
 // Set logged in user
 export const setCurrentUser = user => {
@@ -12,9 +16,9 @@ export const setCurrentUser = user => {
 };
 
 // Register user
-export const registerUser = (userData, history) => dispatch => {
+export const registerUser = userData => dispatch => {
   axios
-    .post('https://politico-okwara.herokuapp.com/api/v1/auth/signup', userData)
+    .post('/auth/signup', userData)
     .then(res => {
       const response = res.data.data[0];
 
@@ -30,9 +34,6 @@ export const registerUser = (userData, history) => dispatch => {
 
       // Set current user
       dispatch(setCurrentUser(user));
-
-      // history.push('/userhome');
-      toast.success('Registration Successful');
     })
     .catch(err =>
       dispatch({
@@ -42,9 +43,9 @@ export const registerUser = (userData, history) => dispatch => {
     );
 };
 
-export const loginUser = (userData, history) => dispatch => {
+export const loginUser = userData => dispatch => {
   axios
-    .post('https://politico-okwara.herokuapp.com/api/v1/auth/login', userData)
+    .post('/auth/login', userData)
     .then(res => {
       const response = res.data.data[0];
 
@@ -60,27 +61,19 @@ export const loginUser = (userData, history) => dispatch => {
 
       // Set current user
       dispatch(setCurrentUser(user));
-
-      history.push('/userhome');
-      toast.success('Login Successful');
     })
     .catch(err => {
-      console.log(err);
       dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
     });
 };
 
 // Log User out
-export const logoutUser = () => dispatch => {
-  // Remove the token from localhost
+export const logoutUser = history => dispatch => {
   localStorage.removeItem('jwtToken');
-
-  // remove token from the header
   setAuthToken(false);
-
-  // Remove user profile
-  dispatch({ type: CLEAR_CURRENT_PROFILE });
-
-  // Set current user to {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
+  dispatch({ type: CLEAR_CURRENT_PROFILE });
+  dispatch({ type: CLEAR_DASHBOARD });
+  if (history) history.push('/');
+  else window.location.href = '/';
 };

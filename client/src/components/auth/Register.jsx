@@ -8,6 +8,12 @@ import { registerUser } from '../../actions/authActions';
 import { withRouter } from 'react-router-dom';
 import { isEmail, isLength } from 'validator';
 import isEmpty from '../../validations/is-empty';
+import signupBanner from '@base/img/signup-banner.png';
+import personIcon from '@base/img/person-icon.png';
+import phoneIcon from '@base/img/phone-icon.png';
+import arrowIcon from '@base/img/arror-icon.png';
+import emailIcon from '@base/img/email-icon.png';
+import passwordIcon from '@base/img/password-icon.png';
 
 class Register extends Component {
   state = {
@@ -128,14 +134,14 @@ class Register extends Component {
 
       const { firstName, lastName, phoneNumber, email, password } = this.state;
       const userData = { firstName, lastName, phoneNumber, email, password };
-      this.props.registerUser(userData, this.props.history);
+      this.props.registerUser(userData);
     }
   };
 
   render() {
     const { firstName, lastName, phoneNumber, email, password, errors } = this.state;
 
-    if (this.props.auth.isAuthenticated) return <Redirect to="/userhome" />;
+    if (this.props.auth.isAuthenticated) return <Redirect to="/dashboard" />;
 
     return (
       <div className="outer">
@@ -150,7 +156,7 @@ class Register extends Component {
           <div className="inner">
             <div className="form-image-div">
               <div className="login-image-banner">
-                <img src="img/signup-banner.png" />
+                <img src={signupBanner} />
               </div>
             </div>
 
@@ -170,7 +176,7 @@ class Register extends Component {
                     name="firstName"
                     className="signin-text-field"
                     onChange={this.onChange}
-                    icon="img/person-icon.png"
+                    icon={personIcon}
                     error={errors.firstName}
                   />
 
@@ -181,7 +187,7 @@ class Register extends Component {
                     name="lastName"
                     className="signin-text-field"
                     onChange={this.onChange}
-                    icon="img/person-icon.png"
+                    icon={personIcon}
                     error={errors.lastName}
                   />
 
@@ -192,7 +198,7 @@ class Register extends Component {
                     name="phoneNumber"
                     className="signin-text-field"
                     onChange={this.onChange}
-                    icon="img/phone-icon.png"
+                    icon={phoneIcon}
                     error={errors.phoneNumber}
                   />
 
@@ -203,7 +209,7 @@ class Register extends Component {
                     name="email"
                     className="signin-text-field"
                     onChange={this.onChange}
-                    icon="img/email-icon.png"
+                    icon={emailIcon}
                     error={errors.email}
                   />
 
@@ -215,7 +221,7 @@ class Register extends Component {
                     name="password"
                     className="signin-text-field"
                     onChange={this.onChange}
-                    icon="img/password-icon.png"
+                    icon={passwordIcon}
                     error={errors.password}
                   />
 
@@ -230,7 +236,7 @@ class Register extends Component {
 
                   <div className="create-account-div">
                     <Link to="/login">Already have an account?</Link>
-                    <img src="img/arror-icon.png" />
+                    <img src={arrowIcon} />
                   </div>
                 </form>
               </div>

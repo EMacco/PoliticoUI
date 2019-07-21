@@ -14,7 +14,7 @@
 
 body {
   margin: 0;
-  background: #f3f3f3f3;
+  background: rgb(224, 243, 243);
   font-family: 'Work Sans', sans-serif;
   font-size: 0.8em;
 }
@@ -889,11 +889,12 @@ label {
 
 .overlay {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.3);
   z-index: 100;
-  display: none;
 }
 
 #loadingIconContainer {

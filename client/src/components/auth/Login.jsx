@@ -8,6 +8,10 @@ import { loginUser } from '../../actions/authActions';
 import { withRouter } from 'react-router-dom';
 import { isEmail, isLength } from 'validator';
 import isEmpty from '../../validations/is-empty';
+import passwordIcon from '@base/img/password-icon.png';
+import emailIcon from '@base/img/email-icon.png';
+import arrowIcon from '@base/img/arror-icon.png';
+import signInBanner from '@base/img/signin-banner.png';
 
 class Login extends Component {
   state = {
@@ -89,14 +93,14 @@ class Login extends Component {
 
       const { email, password } = this.state;
       const userData = { email, password };
-      this.props.loginUser(userData, this.props.history);
+      this.props.loginUser(userData);
     }
   };
 
   render() {
     const { email, password, errors } = this.state;
 
-    if (this.props.auth.isAuthenticated) return <Redirect to="/userhome" />;
+    if (this.props.auth.isAuthenticated) return <Redirect to="/dashboard" />;
 
     return (
       <div className="outer">
@@ -111,7 +115,7 @@ class Login extends Component {
           <div className="inner">
             <div className="form-image-div">
               <div className="login-image-banner">
-                <img src="img/signin-banner.png" />
+                <img src={signInBanner} />
               </div>
             </div>
 
@@ -131,7 +135,7 @@ class Login extends Component {
                     name="email"
                     className="signin-text-field"
                     onChange={this.onChange}
-                    icon="img/email-icon.png"
+                    icon={emailIcon}
                     error={errors.email}
                   />
 
@@ -143,7 +147,7 @@ class Login extends Component {
                     name="password"
                     className="signin-text-field"
                     onChange={this.onChange}
-                    icon="img/password-icon.png"
+                    icon={passwordIcon}
                     error={errors.password}
                   />
 
@@ -158,7 +162,7 @@ class Login extends Component {
 
                   <div className="create-account-div">
                     <Link to="/register">Create your Account</Link>
-                    <img src="img/arror-icon.png" />
+                    <img src={arrowIcon} />
                   </div>
                 </form>
               </div>

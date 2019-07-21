@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./client/src/components/*"],
+      "@reducers/*": ["./client/src/reducers/*"],
+      "@actions/*": ["./client/src/actions/*"],
+      "@utils/*": ["./client/src/utils/*"],
+      "@base/*": ["./client/public/*"],
+      "@config/*": ["./client/src/config/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
