@@ -79,7 +79,7 @@ class UserHome extends Component {
         <AuthHeader />
         <main id="user-home-main">
           <div className="container">
-            <AuthNav />
+            <AuthNav current="profile" />
 
             <section id="user-home-content-div">
               <div id="loadingIconContainer" />

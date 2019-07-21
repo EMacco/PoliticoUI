@@ -14,7 +14,9 @@ const Card = ({ name, image, content, hidden }) => {
       numberOfCandidates,
       hidden,
       text,
-      style
+      style,
+      onClick,
+      id
     } = details;
     let design;
 
@@ -32,7 +34,7 @@ const Card = ({ name, image, content, hidden }) => {
         break;
       case 'button':
         design = (
-          <button className={style} key={Math.random().toString()}>
+          <button className={style} key={Math.random().toString()} onClick={onClick} id={id}>
             {text}
           </button>
         );
