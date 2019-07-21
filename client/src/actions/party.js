@@ -40,7 +40,7 @@ const changeUserParty = partyId => dispatch => {
     });
 };
 
-const fetchPoliticalParties = partyid => dispatch => {
+const fetchPoliticalParties = () => dispatch => {
   let parties = [];
   fetchAllParties(partiesRes => {
     const { data } = partiesRes.data;

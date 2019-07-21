@@ -980,3 +980,8 @@ input {
 .signin-submit-btn:disabled {
   cursor: not-allowed !important;
 }
+
+button,
+.casted-vote {
+  display: block;
+}
