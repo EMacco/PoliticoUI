@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --config webpack.dev.js --hot --open",
     "clean": "rm -rf client/dist",
     "heroku-postbuild": "npm run build",
-    "test": "jest --watchAll",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
@@ -20,6 +21,8 @@
     "dotenv": "^8.0.0",
     "history": "^4.9.0",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-transform-stub": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mini-css-extract-plugin": "^0.7.0",
