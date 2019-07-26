@@ -9,7 +9,6 @@ import {
   CLEAR_OFFICES
 } from '../actions/types';
 
-// Set logged in user
 export const setCurrentUser = user => {
   return {
     type: SET_CURRENT_USER,
@@ -17,56 +16,33 @@ export const setCurrentUser = user => {
   };
 };
 
-// Register user
-export const registerUser = userData => dispatch => {
-  axios
-    .post('/auth/signup', userData)
-    .then(res => {
-      const response = res.data.data[0];
-
-      // Set token in local storage
-      const { token } = response;
-      localStorage.setItem('jwtToken', token);
-
-      // Set token to auth header
-      setAuthToken(token);
-
-      // Decode to get user data
-      const { user } = response;
-
-      // Set current user
-      dispatch(setCurrentUser(user));
-    })
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: { global: err.response.data.error }
-      })
-    );
+export const registerUser = userData => async dispatch => {
+  try {
+    const response = (await axios.post('/auth/signup', userData)).data.data[0];
+    const { token } = response;
+    localStorage.setItem('jwtToken', token);
+    setAuthToken(token);
+    const { user } = response;
+    dispatch(setCurrentUser(user));
+  } catch (err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: { global: err.response.data.error }
+    });
+  }
 };
 
-export const loginUser = userData => dispatch => {
-  axios
-    .post('/auth/login', userData)
-    .then(res => {
-      const response = res.data.data[0];
-
-      // Set token in local storage
-      const { token } = response;
-      localStorage.setItem('jwtToken', token);
-
-      // Set token to auth header
-      setAuthToken(token);
-
-      // Decode to get user data
-      const { user } = response;
-
-      // Set current user
-      dispatch(setCurrentUser(user));
-    })
-    .catch(err => {
-      dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-    });
+export const loginUser = userData => async dispatch => {
+  try {
+    const response = (await axios.post('/auth/login', userData)).data.data[0];
+    const { token } = response;
+    localStorage.setItem('jwtToken', token);
+    setAuthToken(token);
+    const { user } = response;
+    dispatch(setCurrentUser(user));
+  } catch (err) {
+    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
+  }
 };
 
 // Log User out

@@ -2,15 +2,12 @@ import axios from 'axios';
 import { GET_ERRORS, SET_GOVERNMENT_OFFICES } from '@actions/types';
 import { extractCandidateInfoFromOffice, checkIfUserExpressedInterest } from '../utils/offices';
 
-const fetchOfficeDetailsByID = (id, completionHandler) => {
-  axios
-    .get(`/offices/${id}`)
-    .then(res => {
-      completionHandler(res);
-    })
-    .catch(err => {
-      dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-    });
+const fetchOfficeDetailsByID = async id => {
+  try {
+    return await axios.get(`/offices/${id}`);
+  } catch (err) {
+    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
+  }
 };
 
 const fetchAllOffices = async () => {
@@ -37,15 +34,12 @@ const fetchAllInterests = async () => {
   }
 };
 
-const collateResult = (id, completionHandler) => {
-  axios
-    .post(`/office/${id}/result`)
-    .then(res => {
-      completionHandler(res);
-    })
-    .catch(err => {
-      dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-    });
+const collateResult = async id => {
+  try {
+    return await axios.post(`/office/${id}/result`);
+  } catch (err) {
+    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
+  }
 };
 
 const expressInterest = (partyId, officeId) => async dispatch => {
@@ -126,7 +120,6 @@ const fetchGovernmentOffices = userId => async dispatch => {
       }
     }
   } catch (err) {
-    console.log(err);
     dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
   }
 };
