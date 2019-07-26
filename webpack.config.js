@@ -6,7 +6,7 @@ module.exports = {
   entry: path.join(__dirname, 'client/src', 'index.jsx'),
   output: {
     filename: 'app_bundle.js',
-    path: path.join(__dirname, './client/dist'),
+    path: path.join(__dirname, './dist'),
     publicPath: '/'
   },
   devServer: {
