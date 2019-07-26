@@ -47,13 +47,13 @@ export const loginUser = userData => async dispatch => {
 
 // Log User out
 export const logoutUser = history => dispatch => {
-  localStorage.removeItem('jwtToken');
-  setAuthToken(false);
   dispatch(setCurrentUser({}));
   dispatch({ type: CLEAR_CURRENT_PROFILE });
   dispatch({ type: CLEAR_DASHBOARD });
   dispatch({ type: CLEAR_PARTIES });
   dispatch({ type: CLEAR_OFFICES });
+  localStorage.removeItem('jwtToken');
+  setAuthToken(false);
   if (history) history.push('/');
   else window.location.href = '/';
 };

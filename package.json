@@ -4,18 +4,20 @@
   "description": "Politico UI using React &amp; Redux",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js --hot --open",
-    "clean": "rm -rf client/dist",
+    "start:dev": "NODE_ENV=development webpack-dev-server --config webpack.config.js --open",
+    "build": "NODE_ENV=production npm run clean && webpack --config webpack.config.js",
     "heroku-postbuild": "npm run build",
+    "clean": "rm -rf dist",
     "test": "jest --coverage",
-    "test:watch": "jest --watch",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test:dev": "jest --coverage && rm -rf coverage",
+    "coverage": "cat ./coverage/lcov.info | coveralls",
+    "test:watch": "jest --coverage --watch"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "axios": "^0.18.1",
     "classnames": "^2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.0.0",
     "cors": "^2.8.5",
     "coveralls": "^3.0.5",
@@ -27,7 +29,6 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mini-css-extract-plugin": "^0.7.0",
-    "nyc": "^14.1.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
@@ -89,15 +90,5 @@
   "bugs": {
     "url": "https://github.com/EMacco/PoliticoUI/issues"
   },
-  "homepage": "https://github.com/EMacco/PoliticoUI#readme",
-  "nyc": {
-    "all": true,
-    "include": [
-      "client/**"
-    ],
-    "exclude": [
-      "**/tests/**",
-      "client/public"
-    ]
-  }
+  "homepage": "https://github.com/EMacco/PoliticoUI#readme"
 }
