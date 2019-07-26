@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import personIcon from '@base/img/person-large.png';
 import { logoutUser } from '@actions/authActions';
-import { updateProfilePicture } from '@actions/dashboard';
 
 class AuthNav extends Component {
   state = {
@@ -14,15 +13,6 @@ class AuthNav extends Component {
 
   signoutBtnClicked = () => {
     this.props.logoutUser(this.props.history);
-  };
-
-  profileImageChanged = event => {
-    this.setState({ uploadingMessage: 'Uploading...' });
-
-    if (event.target.files.length > 0) {
-      this.setState({ src: URL.createObjectURL(event.target.files[0]) });
-      this.props.updateProfilePicture(this.state.src);
-    }
   };
 
   render() {
@@ -42,13 +32,6 @@ class AuthNav extends Component {
           <i>
             <label id="uploadingText">{uploadingMessage}</label>
           </i>
-          <input
-            type="file"
-            accept="image/x-png,image/gif,image/jpeg"
-            className="select-btn"
-            id="profile-file-upload"
-            onChange={this.profileImageChanged}
-          />
         </div>
         <div className="profile-description-text">
           <label>
@@ -77,7 +60,7 @@ class AuthNav extends Component {
             My Profile
           </div>
         </Link>
-        {isadmin ? (
+        {/* {isadmin ? (
           <Link to="/admin-dashboard" id={current === 'dashboard' ? 'current-side-bar' : null}>
             <div className="nav-menu" id={current === 'dashboard' ? 'current-side-bar' : null}>
               My Dashboard
@@ -85,7 +68,7 @@ class AuthNav extends Component {
           </Link>
         ) : (
           ''
-        )}
+        )} */}
         <Link to="/parties" id={current === 'parties' ? 'current-side-bar' : null}>
           <div className="nav-menu" id={current === 'parties' ? 'current-side-bar' : null}>
             Political Parties
@@ -96,11 +79,11 @@ class AuthNav extends Component {
             Government Offices
           </div>
         </Link>
-        <Link to="/elections" id={current === 'elections' ? 'current-side-bar' : null}>
+        {/* <Link to="/elections" id={current === 'elections' ? 'current-side-bar' : null}>
           <div className="nav-menu" id={current === 'elections' ? 'current-side-bar' : null}>
             Vote
           </div>
-        </Link>
+        </Link> */}
         <Link to="/dashboard" onClick={this.signoutBtnClicked}>
           <div className="nav-menu">Log out</div>
         </Link>
@@ -111,8 +94,7 @@ class AuthNav extends Component {
 
 AuthNav.prototypes = {
   auth: PropTypes.object.isRequired,
-  logoutUser: PropTypes.func.isRequired,
-  updateProfilePicture: PropTypes.func.isRequired
+  logoutUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -121,5 +103,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser, updateProfilePicture }
+  { logoutUser }
 )(withRouter(AuthNav));

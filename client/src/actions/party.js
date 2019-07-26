@@ -3,46 +3,37 @@ import { GET_ERRORS, SET_POLITICAL_PARTIES } from '@actions/types';
 import { setCurrentUser } from '@actions/authActions';
 import setAuthToken from '../utils/setAuthToken';
 
-const fetchPartyByID = (id, completionHandler) => {
-  axios
-    .get(`/parties/${id}`)
-    .then(res => {
-      completionHandler(res);
-    })
-    .catch(err => {
-      dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-    });
+const fetchPartyByID = async id => {
+  try {
+    return await axios.get(`/parties/${id}`);
+  } catch (err) {
+    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
+  }
 };
 
-const fetchAllParties = completionHandler => {
-  axios
-    .get(`/parties`)
-    .then(res => {
-      completionHandler(res);
-    })
-    .catch(err => {
-      dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-    });
+const fetchAllParties = async () => {
+  try {
+    return await axios.get(`/parties`);
+  } catch (err) {
+    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
+  }
 };
 
-const changeUserParty = partyId => dispatch => {
-  axios
-    .post(`/parties/join`, { partyId })
-    .then(res => {
-      const { token, user } = res.data.data[0];
-      localStorage.setItem('jwtToken', token);
-      setAuthToken(token);
-      dispatch(setCurrentUser(user));
-    })
-    .catch(err => {
-      console.log(err);
-      dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-    });
+const changeUserParty = partyId => async dispatch => {
+  try {
+    const { token, user } = (await axios.post(`/parties/join`, { partyId })).data.data[0];
+    localStorage.setItem('jwtToken', token);
+    setAuthToken(token);
+    dispatch(setCurrentUser(user));
+  } catch (err) {
+    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
+  }
 };
 
-const fetchPoliticalParties = () => dispatch => {
+const fetchPoliticalParties = () => async dispatch => {
   let parties = [];
-  fetchAllParties(partiesRes => {
+  try {
+    const partiesRes = await fetchAllParties();
     const { data } = partiesRes.data;
 
     for (let ind = 0; ind < data.length; ind += 1) {
@@ -58,7 +49,9 @@ const fetchPoliticalParties = () => dispatch => {
         dispatch({ type: SET_POLITICAL_PARTIES, payload: parties });
       }
     }
-  });
+  } catch (err) {
+    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
+  }
 };
 
 export { fetchPartyByID, fetchAllParties, fetchPoliticalParties, changeUserParty };
