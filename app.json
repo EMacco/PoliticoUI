@@ -1,0 +1,21 @@
+{
+  "name": "politicoui",
+  "description": "Politico front end using React & Redux",
+  "scripts": {
+    "postdeploy": "npm run build"
+  },
+  "env": {
+    "HEROKU_APP_NAME": {
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ],
+  "stack": "heroku-18"
+}
