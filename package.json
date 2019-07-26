@@ -9,7 +9,7 @@
     "heroku-postbuild": "npm run build",
     "clean": "rm -rf dist",
     "test": "jest --coverage",
-    "test:dev": "jest --coverage && rm -rf coverage",
+    "test:dev": "jest --coverage && coverage",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "test:watch": "jest --coverage --watch"
   },
