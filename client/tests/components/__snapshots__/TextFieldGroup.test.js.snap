@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextFieldGroup /> should render the TextFieldGroup component correctly 1`] = `
+<Fragment>
+  <div
+    className="input-with-icon"
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <img
+      src=""
+    />
+    <input
+      className=""
+      id="1"
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      required={true}
+      type="input"
+      value=""
+    />
+  </div>
+  <div
+    className="errorDiv"
+  >
+    Email is required
+  </div>
+</Fragment>
+`;

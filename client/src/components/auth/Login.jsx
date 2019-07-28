@@ -13,7 +13,7 @@ import emailIcon from '@base/img/email-icon.png';
 import arrowIcon from '@base/img/arror-icon.png';
 import signInBanner from '@base/img/signin-banner.png';
 
-class Login extends Component {
+export class Login extends Component {
   state = {
     email: '',
     password: '',

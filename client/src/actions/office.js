@@ -3,43 +3,23 @@ import { GET_ERRORS, SET_GOVERNMENT_OFFICES } from '@actions/types';
 import { extractCandidateInfoFromOffice, checkIfUserExpressedInterest } from '../utils/offices';
 
 const fetchOfficeDetailsByID = async id => {
-  try {
-    return await axios.get(`/offices/${id}`);
-  } catch (err) {
-    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-  }
+  return await axios.get(`/offices/${id}`);
 };
 
 const fetchAllOffices = async () => {
-  try {
-    return (await axios.get('/offices')).data.data;
-  } catch (err) {
-    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-  }
+  return (await axios.get('/offices')).data.data;
 };
 
 const fetchOfficeCandidates = async () => {
-  try {
-    return (await axios.get('/offices/candidates')).data.data;
-  } catch (err) {
-    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-  }
+  return (await axios.get('/offices/candidates')).data.data;
 };
 
 const fetchAllInterests = async () => {
-  try {
-    return (await axios.get('/offices/interests')).data.data;
-  } catch (err) {
-    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-  }
+  return (await axios.get('/offices/interests')).data.data;
 };
 
 const collateResult = async id => {
-  try {
-    return await axios.post(`/office/${id}/result`);
-  } catch (err) {
-    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-  }
+  return await axios.post(`/office/${id}/result`);
 };
 
 const expressInterest = (partyId, officeId) => async dispatch => {
@@ -47,7 +27,6 @@ const expressInterest = (partyId, officeId) => async dispatch => {
     const response = await axios.post('/offices/interests', { partyId, officeId });
     window.location.reload();
   } catch (err) {
-    console.log(err.response);
     dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
   }
 };

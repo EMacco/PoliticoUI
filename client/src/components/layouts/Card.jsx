@@ -16,7 +16,8 @@ const Card = ({ name, image, content, hidden }) => {
       text,
       style,
       onClick,
-      id
+      id,
+      key
     } = details;
     let design;
 
@@ -28,20 +29,20 @@ const Card = ({ name, image, content, hidden }) => {
             officeId={officeId}
             officeName={officeName}
             numberOfCandidates={numberOfCandidates}
-            key={Math.random().toString()}
+            key={key || Math.random().toString()}
           />
         );
         break;
       case 'button':
         design = (
-          <button className={style} key={Math.random().toString()} onClick={onClick} id={id}>
+          <button className={style} key={key || Math.random().toString()} onClick={onClick} id={id}>
             {text}
           </button>
         );
         break;
       case 'span':
         design = (
-          <span className={style} key={Math.random().toString()}>
+          <span className={style} key={key || Math.random().toString()}>
             {text}
           </span>
         );
@@ -50,7 +51,7 @@ const Card = ({ name, image, content, hidden }) => {
         design = '';
         break;
       default:
-        design = <CardText title={title} value={value} key={Math.random().toString()} />;
+        design = <CardText title={title} value={value} key={key || Math.random().toString()} />;
     }
 
     return design;

@@ -66,12 +66,12 @@ const fetchPageVotes = ({ id }) => async dispatch => {
       const officeResp = await fetchOfficeDetailsByID(officeId);
       const officeRes = officeResp.data;
       officeName = officeRes.data[0].name;
-
+      
       const partyResp = await fetchPartyByID(partyId);
       const partyRes = partyResp.data;
       partyName = partyRes.data[0].name;
       partyLogo = partyRes.data[0].logourl;
-
+      
       const resultResp = await collateResult(officeId);
       const resultRes = resultResp.data;
       let winningCandidate;

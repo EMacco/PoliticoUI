@@ -4,19 +4,11 @@ import { setCurrentUser } from '@actions/authActions';
 import setAuthToken from '../utils/setAuthToken';
 
 const fetchPartyByID = async id => {
-  try {
-    return await axios.get(`/parties/${id}`);
-  } catch (err) {
-    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-  }
+  return await axios.get(`/parties/${id}`);
 };
 
 const fetchAllParties = async () => {
-  try {
-    return await axios.get(`/parties`);
-  } catch (err) {
-    dispatch({ type: GET_ERRORS, payload: { global: err.response.data.error } });
-  }
+  return await axios.get(`/parties`);
 };
 
 const changeUserParty = partyId => async dispatch => {

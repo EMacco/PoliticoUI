@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth actions should dispatch SET_CURRENT_USER on successful login 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "email": "testing@testing.com",
+      "firstname": "John",
+      "id": 1,
+      "lastname": "Doe",
+      "password": "password",
+      "phone": "08088293829",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+  Object {
+    "payload": Object {},
+    "type": "SET_CURRENT_USER",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_PROFILE",
+  },
+  Object {
+    "type": "CLEAR_DASHBOARD",
+  },
+  Object {
+    "type": "CLEAR_PARTIES",
+  },
+  Object {
+    "type": "CLEAR_OFFICES",
+  },
+  Object {
+    "payload": Object {
+      "email": "testing@testing.com",
+      "firstname": "John",
+      "id": 1,
+      "lastname": "Doe",
+      "password": "password",
+      "phone": "08088293829",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+]
+`;
+
+exports[`Auth actions should dispatch SET_CURRENT_USER on successful registration 1`] = `Array []`;
+
+exports[`Auth actions should dispatch SET_CURRENT_USER, CLEAR_CURRENT_PROFILE, CLEAR_DASHBOARD, CLEAR_PARTIES, and CLEAR_OFFICES 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "email": "testing@testing.com",
+      "firstname": "John",
+      "id": 1,
+      "lastname": "Doe",
+      "password": "password",
+      "phone": "08088293829",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+  Object {
+    "payload": Object {},
+    "type": "SET_CURRENT_USER",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_PROFILE",
+  },
+  Object {
+    "type": "CLEAR_DASHBOARD",
+  },
+  Object {
+    "type": "CLEAR_PARTIES",
+  },
+  Object {
+    "type": "CLEAR_OFFICES",
+  },
+]
+`;

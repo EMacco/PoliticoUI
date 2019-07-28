@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import NavItem from '@components/common/NavItem';
 import { connect } from 'react-redux';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Redirect, withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { logoutUser } from '@actions/authActions';
 
-class AuthHeader extends Component {
+export class AuthHeader extends Component {
   state = { showOverlay: false };
 
   toggleMenu = () => {
@@ -24,7 +24,7 @@ class AuthHeader extends Component {
       <Fragment>
         <header className="index-header">
           <h1 className="logo">
-            <a href="user-home.html">POLITICO</a>
+            <Link to="/dashboard">POLITICO</Link>
           </h1>
 
           <input type="checkbox" className="nav-toggle" id="nav-toggle" onClick={this.toggleMenu} />
@@ -39,7 +39,7 @@ class AuthHeader extends Component {
                 <NavItem name="Government Offices" path="/offices" />
                 <NavItem name="Vote" path="/election" />
                 <li>
-                  <a onClick={this.signoutBtnClicked}>Log out</a>
+                  <span onClick={this.signoutBtnClicked}>Log out</span>
                 </li>
               </ul>
             </div>

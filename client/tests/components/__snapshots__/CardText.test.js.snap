@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardText /> should render the CardText component correctly 1`] = `
+<label>
+  Date
+  : 
+  <span
+    className="profile-answers"
+  >
+    12th July 2019
+  </span>
+</label>
+`;

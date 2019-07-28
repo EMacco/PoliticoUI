@@ -41,7 +41,7 @@ TextFieldGroup.propTypes = {
   className: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  icon: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   error: PropTypes.string
 };
 

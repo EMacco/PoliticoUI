@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Offices /> should render the Offices component correctly 1`] = `
+<div>
+  <Connect(withRouter(AuthHeader)) />
+  <main
+    id="user-home-main"
+  >
+    <div
+      className="container"
+    >
+      <Connect(withRouter(AuthNav))
+        current="offices"
+      />
+      <div
+        id="loadingIconContainer"
+      />
+      <section
+        id="user-home-content-div"
+      >
+        <div
+          className="profile-page-section"
+        >
+          <h3
+            id="interested-office-header"
+          >
+            Government Offices (
+            2
+            )
+          </h3>
+          <div
+            className="content-group"
+            id="governmentOfficeSlot"
+          >
+            <Card
+              content={
+                Array [
+                  Object {
+                    "title": "Type",
+                    "value": "state",
+                  },
+                  Object {
+                    "title": "Date",
+                    "value": "June 9th",
+                  },
+                  Object {
+                    "numberOfCandidates": 3,
+                    "officeId": 1,
+                    "officeName": "",
+                    "type": "link",
+                  },
+                  Object {
+                    "id": "{\\"officeId\\":1,\\"partyId\\":2}",
+                    "onClick": null,
+                    "style": "won",
+                    "text": "Approved candidate",
+                    "type": "span",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name=""
+            />
+            <Card
+              content={
+                Array [
+                  Object {
+                    "title": "Type",
+                    "value": "state",
+                  },
+                  Object {
+                    "title": "Date",
+                    "value": "June 9th",
+                  },
+                  Object {
+                    "numberOfCandidates": 3,
+                    "officeId": 1,
+                    "officeName": "",
+                    "type": "link",
+                  },
+                  Object {
+                    "id": "{\\"officeId\\":1,\\"partyId\\":2}",
+                    "onClick": null,
+                    "style": "won",
+                    "text": "",
+                    "type": "empty",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name=""
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <AuthFooter />
+  </main>
+</div>
+`;

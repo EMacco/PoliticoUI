@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 import personIcon from '@base/img/person-large.png';
 import { logoutUser } from '@actions/authActions';
 
-class AuthNav extends Component {
+export class AuthNav extends Component {
   state = {
     uploadingMessage: '',
     src: ''

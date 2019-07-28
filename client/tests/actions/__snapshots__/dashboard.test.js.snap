@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard actions should dispatch SET_INTERESTED_OFFICE on successful fetch 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "electionDate": "Fri Mar 01 2019",
+      "image": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452411/mtuaqvskpzlwlu331g1e.png",
+      "numberOfCandidates": 1,
+      "officeId": 1,
+      "officeName": "office of the president",
+    },
+    "type": "SET_INTERESTED_OFFICE",
+  },
+]
+`;
+
+exports[`Dashboard actions should dispatch SET_USER_VOTES on successful fetch of user votes 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "electionDate": "Fri Mar 01 2019",
+      "image": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452411/mtuaqvskpzlwlu331g1e.png",
+      "numberOfCandidates": 1,
+      "officeId": 1,
+      "officeName": "office of the president",
+    },
+    "type": "SET_INTERESTED_OFFICE",
+  },
+  Object {
+    "payload": Array [
+      Object {
+        "name": "John Doe",
+        "officeName": "office of the president",
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452220/ukhkvobjnabok4ymt7g3.jpg",
+        "partyName": "all progressives congress",
+        "result": 0,
+        "resultString": "lost",
+        "resultStyle": "lost",
+      },
+    ],
+    "type": "SET_USER_VOTES",
+  },
+]
+`;

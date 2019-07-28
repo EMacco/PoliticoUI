@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes should render the Routes component correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <ToastContainer
+    autoClose={5000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={true}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    progressStyle={null}
+    role="alert"
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <BrowserRouter>
+    <Switch>
+      <Route
+        exact={true}
+        path="/"
+      >
+        <Connect(Landing) />
+      </Route>
+      <Route
+        exact={true}
+        path="/login"
+      >
+        <Connect(withRouter(Login)) />
+      </Route>
+      <Route
+        exact={true}
+        path="/register"
+      >
+        <Connect(withRouter(Register)) />
+      </Route>
+      <Route
+        exact={true}
+        path="/dashboard"
+      >
+        <Connect(UserHome) />
+      </Route>
+      <Route
+        exact={true}
+        path="/parties"
+      >
+        <Connect(Parties) />
+      </Route>
+      <Route
+        exact={true}
+        path="/offices"
+      >
+        <Connect(Offices) />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+</Provider>
+`;

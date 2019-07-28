@@ -48,12 +48,12 @@ export const loginUser = userData => async dispatch => {
 // Log User out
 export const logoutUser = history => dispatch => {
   dispatch(setCurrentUser({}));
+  localStorage.removeItem('jwtToken');
+  if (history) history.push('/');
+  else window.location.href = '/';
+  setAuthToken(false);
   dispatch({ type: CLEAR_CURRENT_PROFILE });
   dispatch({ type: CLEAR_DASHBOARD });
   dispatch({ type: CLEAR_PARTIES });
   dispatch({ type: CLEAR_OFFICES });
-  localStorage.removeItem('jwtToken');
-  setAuthToken(false);
-  if (history) history.push('/');
-  else window.location.href = '/';
 };

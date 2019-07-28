@@ -8,7 +8,7 @@ import AuthNav from '../layouts/AuthNav';
 import Card from '../layouts/Card';
 import { fetchGovernmentOffices, expressInterest } from '@actions/office';
 
-class Offices extends Component {
+export class Offices extends Component {
   componentDidMount() {
     const {
       fetchGovernmentOffices,
@@ -41,7 +41,8 @@ class Offices extends Component {
         count,
         candidateStatus,
         officeBtn,
-        alreadyApplied
+        alreadyApplied,
+        key
       } = office;
 
       const officeContent = [
@@ -74,7 +75,7 @@ class Offices extends Component {
       ];
 
       officesCard.push(
-        <Fragment key={Math.random().toString()}>
+        <Fragment key={key || Math.random().toString()}>
           <Card name={officeName} image={officeLogo} content={officeContent} />
           {offices.length % 2 !== 0 && ind === offices.length - 1 ? <Card hidden="true" /> : ''}
         </Fragment>

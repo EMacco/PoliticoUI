@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavItem /> should render the NavItem component correctly 1`] = `
+<Fragment>
+  <li>
+    <Link
+      to="/"
+    >
+      Home
+    </Link>
+  </li>
+</Fragment>
+`;
