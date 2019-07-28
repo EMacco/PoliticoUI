@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Offices actions should dispatch SET_CURRENT_USER on successful change of party 1`] = `
+Array [
+  Object {
+    "payload": Array [
+      Object {
+        "hqAddress": "festac lagos",
+        "partyId": 1,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452104/dggfgdaqi5demtki1dnt.png",
+        "partyName": "peoples democratic party",
+      },
+      Object {
+        "hqAddress": "festac lagos",
+        "partyId": 2,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452220/ukhkvobjnabok4ymt7g3.jpg",
+        "partyName": "all progressives congress",
+      },
+      Object {
+        "hqAddress": "lekki, lagos",
+        "partyId": 3,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551466591/aou6cohppt8yckombbsm.png",
+        "partyName": "all progressives grand alliance",
+      },
+      Object {
+        "hqAddress": "google, universal",
+        "partyId": 4,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1557735076/ogpffpwqi1s8hsuewlah.jpg",
+        "partyName": "node package manager",
+      },
+    ],
+    "type": "SET_POLITICAL_PARTIES",
+  },
+  Object {
+    "payload": Object {
+      "email": "testing@testing.com",
+      "firstname": "John",
+      "id": 1,
+      "lastname": "Doe",
+      "partyid": 1,
+      "password": "password",
+      "phone": "08088293829",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+]
+`;
+
+exports[`Offices actions should dispatch SET_POLITICAL_PARTIES on successful fetch 1`] = `
+Array [
+  Object {
+    "payload": Array [
+      Object {
+        "hqAddress": "festac lagos",
+        "partyId": 1,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452104/dggfgdaqi5demtki1dnt.png",
+        "partyName": "peoples democratic party",
+      },
+      Object {
+        "hqAddress": "festac lagos",
+        "partyId": 2,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452220/ukhkvobjnabok4ymt7g3.jpg",
+        "partyName": "all progressives congress",
+      },
+      Object {
+        "hqAddress": "lekki, lagos",
+        "partyId": 3,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551466591/aou6cohppt8yckombbsm.png",
+        "partyName": "all progressives grand alliance",
+      },
+      Object {
+        "hqAddress": "google, universal",
+        "partyId": 4,
+        "partyLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1557735076/ogpffpwqi1s8hsuewlah.jpg",
+        "partyName": "node package manager",
+      },
+    ],
+    "type": "SET_POLITICAL_PARTIES",
+  },
+]
+`;

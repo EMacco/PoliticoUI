@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardLink /> should render the CardLink component correctly 1`] = `
+<Fragment>
+  Candidates: 
+  <Link
+    to="/offices?officeId=1&officeName=Office Name"
+  >
+    4
+     Candidates
+  </Link>
+</Fragment>
+`;

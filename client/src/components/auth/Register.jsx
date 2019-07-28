@@ -15,7 +15,7 @@ import arrowIcon from '@base/img/arror-icon.png';
 import emailIcon from '@base/img/email-icon.png';
 import passwordIcon from '@base/img/password-icon.png';
 
-class Register extends Component {
+export class Register extends Component {
   state = {
     firstName: '',
     lastName: '',

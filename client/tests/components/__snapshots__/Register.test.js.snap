@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Register /> should render the Login component correctly 1`] = `
+<div
+  className="outer"
+>
+  <div
+    className="middle"
+  >
+    <header
+      className="signin-header"
+    >
+      <center>
+        <h1>
+          <Link
+            to="/"
+          >
+            Politico
+          </Link>
+        </h1>
+      </center>
+    </header>
+    <div
+      className="inner"
+    >
+      <div
+        className="form-image-div"
+      >
+        <div
+          className="login-image-banner"
+        >
+          <img
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="login-form"
+      >
+        <div
+          className="form-attributes-registration"
+        >
+          <center>
+            <h1>
+              Create Account
+            </h1>
+          </center>
+          <center>
+            <label
+              id="errorMessage"
+            />
+          </center>
+          <form
+            noValidate={true}
+            onSubmit={[Function]}
+          >
+            <TextFieldGroup
+              className="signin-text-field"
+              icon={
+                Object {
+                  "process": [Function],
+                }
+              }
+              id="firstNameField"
+              name="firstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              type="text"
+              value=""
+            />
+            <TextFieldGroup
+              className="signin-text-field"
+              icon={
+                Object {
+                  "process": [Function],
+                }
+              }
+              id="lastNameField"
+              name="lastName"
+              onChange={[Function]}
+              placeholder="Last Name"
+              type="text"
+              value=""
+            />
+            <TextFieldGroup
+              className="signin-text-field"
+              icon={
+                Object {
+                  "process": [Function],
+                }
+              }
+              id="phoneField"
+              name="phoneNumber"
+              onChange={[Function]}
+              placeholder="Phone Number"
+              type="text"
+              value=""
+            />
+            <TextFieldGroup
+              className="signin-text-field"
+              icon={
+                Object {
+                  "process": [Function],
+                }
+              }
+              id="emailField"
+              name="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="text"
+              value=""
+            />
+            <TextFieldGroup
+              className="signin-text-field"
+              icon={
+                Object {
+                  "process": [Function],
+                }
+              }
+              id="passwordField"
+              name="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="signin-submit-btn"
+              disabled={false}
+              id="loginBtn"
+              type="submit"
+            >
+              Join Us
+            </button>
+            <div
+              className="create-account-div"
+            >
+              <Link
+                to="/login"
+              >
+                Already have an account?
+              </Link>
+              <img
+                src={
+                  Object {
+                    "process": [Function],
+                  }
+                }
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer
+      className="signin-footer"
+    >
+      Politico Website Designed by Okwara Emmanuel © 2019
+    </footer>
+  </div>
+</div>
+`;

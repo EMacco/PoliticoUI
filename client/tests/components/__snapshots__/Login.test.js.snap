@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> should render the Login component correctly 1`] = `
+<div
+  className="outer"
+>
+  <div
+    className="middle"
+  >
+    <header
+      className="signin-header"
+    >
+      <center>
+        <h1>
+          <Link
+            to="/"
+          >
+            Politico
+          </Link>
+        </h1>
+      </center>
+    </header>
+    <div
+      className="inner"
+    >
+      <div
+        className="form-image-div"
+      >
+        <div
+          className="login-image-banner"
+        >
+          <img
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="login-form"
+      >
+        <div
+          className="form-attributes"
+        >
+          <center>
+            <h1>
+              Member Login
+            </h1>
+          </center>
+          <center>
+            <label
+              id="errorMessage"
+            />
+          </center>
+          <form
+            noValidate={true}
+            onSubmit={[Function]}
+          >
+            <TextFieldGroup
+              className="signin-text-field"
+              icon={
+                Object {
+                  "process": [Function],
+                }
+              }
+              id="loginEmail"
+              name="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="text"
+              value=""
+            />
+            <TextFieldGroup
+              className="signin-text-field"
+              icon={
+                Object {
+                  "process": [Function],
+                }
+              }
+              id="loginPassword"
+              name="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="signin-submit-btn"
+              disabled={false}
+              id="loginBtn"
+              type="submit"
+            >
+              Login
+            </button>
+            <div
+              className="create-account-div"
+            >
+              <Link
+                to="/register"
+              >
+                Create your Account
+              </Link>
+              <img
+                src={
+                  Object {
+                    "process": [Function],
+                  }
+                }
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer
+      className="signin-footer"
+    >
+      Politico Website Designed by Okwara Emmanuel © 2019
+    </footer>
+  </div>
+</div>
+`;

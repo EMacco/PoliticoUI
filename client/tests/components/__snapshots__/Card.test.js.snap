@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should render the Card component correctly 1`] = `
+<Fragment>
+  <div
+    className="individual-person-container"
+  >
+    <div>
+      <img
+        src=""
+      />
+    </div>
+    <div
+      className="profile-description-text"
+    >
+      <label>
+        <span
+          className="profile-answers"
+        >
+          Emma
+        </span>
+      </label>
+      <CardLink
+        key="1"
+        numberOfCandidates={4}
+        officeId={1}
+        officeName="Office name"
+      />
+      <button
+        className=""
+        id={1}
+        key="2"
+        onClick={[Function]}
+      >
+        Hahaha
+      </button>
+      <span
+        className=""
+        key="3"
+      >
+        Hahaha
+      </span>
+      <CardText
+        key="4"
+        title="test"
+        value="This is the value"
+      />
+    </div>
+  </div>
+</Fragment>
+`;

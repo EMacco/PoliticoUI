@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthNav /> should render the Auth Navigation component correctly 1`] = `
+<section
+  id="user-profile-container"
+>
+  <div>
+    <img
+      id="profile-img-preview"
+    />
+    <i>
+      <label
+        id="uploadingText"
+      />
+    </i>
+  </div>
+  <div
+    className="profile-description-text"
+  >
+    <label>
+      <span
+        className="profile-answers"
+        id="welcomeUserLbl2"
+      >
+         
+      </span>
+    </label>
+    <label>
+      Email:
+       
+      <span
+        className="profile-answers"
+        id="welcomeEmailLbl"
+      />
+    </label>
+    <label>
+      Phone:
+       
+      <span
+        className="profile-answers"
+        id="welcomePhoneLbl"
+      />
+    </label>
+  </div>
+  <hr
+    className="separate-profile-nav"
+  />
+  <Link
+    id={null}
+    to="/dashboard"
+  >
+    <div
+      className="nav-menu"
+      id={null}
+    >
+      My Profile
+    </div>
+  </Link>
+  <Link
+    id={null}
+    to="/parties"
+  >
+    <div
+      className="nav-menu"
+      id={null}
+    >
+      Political Parties
+    </div>
+  </Link>
+  <Link
+    id={null}
+    to="/offices"
+  >
+    <div
+      className="nav-menu"
+      id={null}
+    >
+      Government Offices
+    </div>
+  </Link>
+  <Link
+    onClick={[Function]}
+    to="/dashboard"
+  >
+    <div
+      className="nav-menu"
+    >
+      Log out
+    </div>
+  </Link>
+</section>
+`;

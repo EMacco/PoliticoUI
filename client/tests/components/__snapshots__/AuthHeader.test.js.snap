@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthHeader /> should render the Auth Header component correctly 1`] = `
+<Fragment>
+  <header
+    className="index-header"
+  >
+    <h1
+      className="logo"
+    >
+      <Link
+        to="/dashboard"
+      >
+        POLITICO
+      </Link>
+    </h1>
+    <input
+      className="nav-toggle"
+      id="nav-toggle"
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <nav>
+      <div
+        className="header-nav"
+      >
+        <ul
+          id="hideDashboard"
+        >
+          <NavItem
+            name="Home"
+            path="/dashboard"
+          />
+          <NavItem
+            name="My Dashboard"
+            path="/admin-dashboard"
+          />
+          <NavItem
+            name="Political Parties"
+            path="/parties"
+          />
+          <NavItem
+            name="Government Offices"
+            path="/offices"
+          />
+          <NavItem
+            name="Vote"
+            path="/election"
+          />
+          <li>
+            <span
+              onClick={[Function]}
+            >
+              Log out
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="header-nav-big-screen"
+      >
+        <ul>
+          <li>
+            Welcome, 
+            <span
+              id="welcomeUserLbl"
+            >
+              Emmanuel Okwara
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <label
+      className="nav-toggle-label"
+      htmlFor="nav-toggle"
+    >
+      <span />
+    </label>
+  </header>
+  <div
+    className=""
+    id="overlay"
+  />
+</Fragment>
+`;

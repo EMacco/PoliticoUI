@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthFooter /> should render the AuthFooter component correctly 1`] = `
+<footer
+  className="user-home-footer"
+>
+  Politico Website Designed by Okwara Emmanuel © 2019
+</footer>
+`;

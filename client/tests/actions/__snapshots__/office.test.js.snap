@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Offices actions should dispatch SET_GOVERNMENT_OFFICES on successful fetch 1`] = `
+Array [
+  Object {
+    "payload": Array [
+      Object {
+        "alreadyApplied": true,
+        "candidateStatus": "Approved candidate",
+        "count": 1,
+        "electionDate": "Fri Mar 01 2019",
+        "officeBtn": "casted-vote",
+        "officeId": 1,
+        "officeLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551452411/mtuaqvskpzlwlu331g1e.png",
+        "officeName": "office of the president",
+        "officeType": "federal",
+      },
+      Object {
+        "alreadyApplied": true,
+        "candidateStatus": "Express Interest",
+        "count": 0,
+        "electionDate": "Not set",
+        "officeBtn": "add-party-btn",
+        "officeId": 2,
+        "officeLogo": "https://res.cloudinary.com/dn4pokov0/image/upload/v1551466689/nph9hky2tdup5qs9af5j.png",
+        "officeName": "office of the governor of lagos state",
+        "officeType": "state",
+      },
+    ],
+    "type": "SET_GOVERNMENT_OFFICES",
+  },
+]
+`;
