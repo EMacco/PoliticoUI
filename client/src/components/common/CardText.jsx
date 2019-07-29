@@ -11,7 +11,7 @@ const CardText = ({ title, value }) => {
 
 CardText.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.oneOfType([PropTypes.string.isRequired, PropTypes.number.isRequired])
 };
 
 export default CardText;

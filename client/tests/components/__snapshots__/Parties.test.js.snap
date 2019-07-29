@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Parties /> should render the Parties component correctly 1`] = `
+<div>
+  <Connect(withRouter(AuthHeader)) />
+  <main
+    id="user-home-main"
+  >
+    <div
+      className="container"
+    >
+      <Connect(withRouter(AuthNav))
+        current="parties"
+      />
+      <div
+        id="loadingIconContainer"
+      />
+      <section
+        id="user-home-content-div"
+      >
+        <div
+          className="profile-page-section"
+        >
+          <h3>
+            Political Parties (
+            4
+            )
+          </h3>
+          <div
+            className="content-group"
+            id="userVotesSlot"
+          >
+            <Card
+              content={
+                Array [
+                  Object {
+                    "title": "HQ Address",
+                    "value": undefined,
+                  },
+                  Object {
+                    "id": 1,
+                    "onClick": [Function],
+                    "style": "add-party-btn",
+                    "text": "Join Party",
+                    "type": "button",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name="Party Name"
+            />
+            <Card
+              content={
+                Array [
+                  Object {
+                    "title": "HQ Address",
+                    "value": undefined,
+                  },
+                  Object {
+                    "id": 2,
+                    "onClick": null,
+                    "style": "casted-vote",
+                    "text": "Member",
+                    "type": "span",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name="Party Name"
+            />
+            <Card
+              content={
+                Array [
+                  Object {
+                    "title": "HQ Address",
+                    "value": undefined,
+                  },
+                  Object {
+                    "id": 3,
+                    "onClick": [Function],
+                    "style": "add-party-btn",
+                    "text": "Join Party",
+                    "type": "button",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name="Party Name"
+            />
+            <Card
+              content={
+                Array [
+                  Object {
+                    "title": "HQ Address",
+                    "value": undefined,
+                  },
+                  Object {
+                    "id": 4,
+                    "onClick": [Function],
+                    "style": "add-party-btn",
+                    "text": "Join Party",
+                    "type": "button",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name="Party Name"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <AuthFooter />
+  </main>
+</div>
+`;

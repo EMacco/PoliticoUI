@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserHome /> should render the UserHome component correctly 1`] = `
+<div>
+  <Connect(withRouter(AuthHeader)) />
+  <main
+    id="user-home-main"
+  >
+    <div
+      className="container"
+    >
+      <Connect(withRouter(AuthNav))
+        current="profile"
+      />
+      <section
+        id="user-home-content-div"
+      >
+        <div
+          id="loadingIconContainer"
+        />
+        <div
+          className="profile-page-section"
+        >
+          <h3
+            id="interested-office-header"
+          >
+            Interested Office
+          </h3>
+          <div
+            className="content-group"
+            id="interestedOfficeSlot"
+          >
+            <Card
+              content={
+                Array [
+                  Object {
+                    "numberOfCandidates": 4,
+                    "officeId": 1,
+                    "officeName": "Office",
+                    "type": "link",
+                  },
+                  Object {
+                    "title": "Date",
+                    "value": "5th May",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name="Office"
+            />
+            <Card
+              content={Array []}
+              hidden="true"
+              image=""
+              name=""
+            />
+          </div>
+        </div>
+        <div
+          className="profile-page-section"
+        >
+          <h3>
+            My Votes (
+            1
+            )
+          </h3>
+          <div
+            className="content-group"
+            id="userVotesSlot"
+          >
+            <Card
+              content={
+                Array [
+                  Object {
+                    "title": "Party",
+                    "value": "Party",
+                  },
+                  Object {
+                    "title": "Office",
+                    "value": "Office",
+                  },
+                  Object {
+                    "title": "Result",
+                    "value": 5,
+                  },
+                  Object {
+                    "style": "won-election",
+                    "text": "won",
+                    "type": "span",
+                  },
+                ]
+              }
+              hidden="false"
+              image=""
+              name="John"
+            />
+            <Card
+              content={Array []}
+              hidden="true"
+              image=""
+              name=""
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <AuthFooter />
+  </main>
+</div>
+`;
