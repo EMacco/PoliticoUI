@@ -7,7 +7,7 @@ import AuthNav from '../layouts/AuthNav';
 import Card from '../layouts/Card';
 import { fetchPoliticalParties, changeUserParty } from '@actions/party';
 
-class Parties extends Component {
+export class Parties extends Component {
   componentDidMount() {
     const { fetchPoliticalParties } = this.props;
     fetchPoliticalParties();

@@ -7,7 +7,7 @@ import AuthNav from '@components/layouts/AuthNav';
 import Card from '../layouts/Card';
 import { fetchInterestedOffice, fetchPageVotes } from '@actions/dashboard';
 
-class UserHome extends Component {
+export class UserHome extends Component {
   componentDidMount() {
     const { user } = this.props.auth;
     this.props.fetchInterestedOffice({ user });
