@@ -985,3 +985,7 @@ button,
 .casted-vote {
   display: block;
 }
+
+#welcomeEmailLbl {
+  word-wrap: break-word;
+}
